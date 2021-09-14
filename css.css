@@ -8,23 +8,25 @@ html {
 }
 
 body {
+	color: #fff;
 	margin: 0;
+	padding-bottom: 10%;
+}	
+
+h1, h2, .menu {
+	letter-spacing: 1.2px;
+	font-family: SalzburgSerial-Xbold;
+	text-transform: uppercase;
 }
 
 h1 {
-	text-transform: uppercase;
-	letter-spacing: 1.2px;
 	font-size: 24px;
-	font-family: SalzburgSerial-Xbold;
 	margin: 10px;
 }
 
 h2 {
-	text-transform: uppercase;
-	letter-spacing: 1.2px;
 	font-size: 20px;
-	font-family: SalzburgSerial-Xbold;
-	margin-bottom: 0;
+	margin: 0;
 }
 
 .logo {
@@ -32,21 +34,18 @@ h2 {
 }
 
 .header {
-	color: white;
 	background-color: red;
 	display: flex;
 	justify-content: center;
 }
 
 .menu {
-	color: white;
-	letter-spacing: 1.2px;
 	font-size: 14px;
-	font-family: SalzburgSerial-Xbold;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
 	background-color: #333;
+	margin-bottom: 17px;
 }
 
 .main {
@@ -56,18 +55,16 @@ h2 {
 
 .content {
 	width: 80%;
-	max-width: 800px;
+	max-width: 600px;
 	line-height: 30px;
 	font-size: 14px;
 	font-family: sans-serif;
-	color: #111;
+	color: #333;
+	overflow-x: auto;
 }
 
 p {
-	margin: 0
-}
-
-ul {
+	margin: 0;
 }
 
 li {
@@ -76,10 +73,11 @@ li {
 
 a {
 	display: block;
-	color: white;
+	color: #fff;
 	text-align: center;
 	padding: 10px;
 	text-decoration: none;
+	cursor: pointer;
 }
 
 a:hover {
@@ -87,24 +85,41 @@ a:hover {
 }
 
 a.current {
-	background-color: #b81212;
+	background-color: #b11;
 }
 
-@media (min-width: 768px) {
-	h1 {
-		font-size: 37px;
-		margin: 20px;
-	}
-	
-	.logo {
-		width: 150px;
-	}
-	
-	.menu {
-		font-size: 20px;
-	}
-	
-	li a {
-	  padding: 14px 16px;
-	}
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td {
+	text-align: center;
+	padding: 5px;
+}
+
+tr:nth-child(even) {
+	background-color: #333;
+	color: #fff;
+}
+
+img, iframe {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+}
+
+div.current {
+	overflow: hidden;
+	padding-bottom: 75%;
+	position: relative;
+	height: 0;
+}
+
+iframe {
+	left: 0;
+	top: 0;
+	height: 100%;
+	position: absolute;
+	border: 0;
 }
