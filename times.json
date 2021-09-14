@@ -1,0 +1,17 @@
+{
+	"content": [
+		{
+			"title": "Opening times",
+			"text": "Closed daily for dinner 1:00pm - 2:00pm (except Saturday)",
+			"table": [
+				{ "rows": ["Monday", "8:30am - 6:00pm"] },
+				{ "rows": ["Tuesday", "8:30am - 6:00pm"] },
+				{ "rows": ["Wednesday", "9:00am - 5:00pm"] },
+				{ "rows": ["Thursday", "Closed"] },
+				{ "rows": ["Friday", "8:30am - 6:00pm"] },
+				{ "rows": ["Saturday", "7:00am - 2:00pm"] },
+				{ "rows": ["Sunday", "Closed"] }
+			]
+		}
+	]
+}

@@ -1,0 +1,18 @@
+{
+	"content": [
+		{
+			"title": "Price list",
+			"table": [
+				{ "rows": ["Gents", "£8.50"] },
+				{ "rows": ["Full head clippers", "£7.50"] },
+				{ "rows": ["Sides only", "£6.50"] },
+				{ "rows": ["Children", "£7.50"] },
+				{ "rows": ["Ladies trim", "£9.50"] },
+				{ "rows": ["Ladies restyle", "£12.00"] },
+				{ "rows": ["Beard only", "£2.50"] },
+				{ "rows": ["Over 65 (Mon - Thu)", "£5.30"] },
+				{ "rows": ["Over 65 (Fri - Sun)", "£6.00"] }
+			]
+		}
+	]
+}
