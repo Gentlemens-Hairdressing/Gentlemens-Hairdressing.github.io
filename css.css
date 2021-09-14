@@ -80,12 +80,12 @@ a {
 	cursor: pointer;
 }
 
-a:hover {
+a:hover, a.current {
 	background-color: #111;
 }
 
 a.current {
-	background-color: #b11;
+	box-shadow: inset 0 -3px 0px 0px red;
 }
 
 table {
