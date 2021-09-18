@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gentlemen's Hairdressing</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="preload" href="webFonts/SalzburgSerialXbold/font.woff2" as="font" type="font/woff2"> 
+		<link rel="stylesheet" href="css.css">
+	</head>
+	<body>
+		<div class="header">
+			<img class="logo" src="logo.svg" />
+			<h1>Gentlemen's<br />hairdressing</h1>
+		</div>
+		<div class="menu">
+			<a onclick="load('home')">home</a>
+			<a onclick="load('times')">times</a>
+			<a onclick="load('prices')">prices</a>
+			<a onclick="load('staff')">staff</a>
+			<a onclick="load('contact')">contact</a>
+		</div>
+		<div class="main">	
+			<div class="content"></div>
+		</div>
+	</body>
+	<script>
+		$ = x => document.querySelector(x);
+		toggle = el => el && el.classList.toggle("current");
+		setText = (el, val) => el.innerText = val;
+		addElement = (par, el, func) => (el = document.createElement(el), func(el), par.appendChild(el));
+		load = (name, nopush) => ($("a.current") != (next = $(`a[onclick="load('${name}')"]`))) && (
+			nopush ? history.replaceState(name, "", name) : history.pushState(name, "", name),
+			toggle($("a.current")),
+			toggle(next),
+			fetch(name + ".json")
+			.then(res => res.json())
+			.catch(() => {})
+			.then(data => $(".content").replaceWith((data && data.content || [{ title: "Page not found" }]).reduce((div, content) => ([
+					["h2", "title"],
+					["p", "text"],
+					["img", "image", (el, val) => el.src = "images/" + val],
+					["table", "table", (el, val) => val.forEach(col => addElement(el, "tr", tr => col.rows.forEach(row => addElement(tr, "td", td => setText(td, row)))))],
+					["div", "map", (el, val) => toggle(el) && addElement(el, "iframe", i => i.src = "https://www.google.com/maps/embed?" + val)]
+				].forEach(x => (x[1] = content[x[1]]) && addElement(div, x[0], el => (x[2] || setText)(el, x[1]))), div), $(".content").cloneNode(0)))
+			)
+		)
+		load(window.location.pathname.replace("/", "") || "home", 1);
+		window.onpopstate = event => load(event.state, 1);
+	</script>
+</html>
